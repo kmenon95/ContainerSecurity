@@ -7,6 +7,7 @@ To get flask application need to have flask installed.
 1. curl -O https://bootstrap.pypa.io/get-pip.py
 2. sudo pip3 install flask
 3. python3 app.py
+
 you will get output like-
 [ec2-user@ip-172-31-43-236 Projects]$ python3 app.py
  * Serving Flask app 'app'
