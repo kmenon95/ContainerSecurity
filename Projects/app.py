@@ -9,6 +9,7 @@ def home():
     return render_template('template.html')
 
 if __name__ == '__main__':
-    app.run(port=8080)
-%env FLASK_DEBUG=1
-%run app.py
+    app.run(host='0.0.0.0',port=8080)
+os.environ['FLASK_DEBUG'] = '1'    
+#%env FLASK_DEBUG=1
+python3 app.py
