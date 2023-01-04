@@ -17,4 +17,10 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:8080
  * Running on http://172.31.43.236:8080
 Press CTRL+C to quit
+
+Copy your public IP with the port you have mentioned and hit it in browser
+
+http://<your_public_IP>:8080/
+
+
 # Note- You have to open rule in your security group for the port mentioned in app.py you can assign any port number and open rule for it.
