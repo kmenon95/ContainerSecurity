@@ -2,7 +2,7 @@ import os
 from flask import Flask
 from flask import render_template
 
-app = Flask(__name__, template_folder='C:/Users/kirti.menon.c/OneDrive - Accenture/Desktop/study_materials/Projects/templates')
+app = Flask(__name__, template_folder='<PATH_TO YOUR_ContainerSecurityfolder>/Projects/templates')
 
 @app.route('/')
 def home():
