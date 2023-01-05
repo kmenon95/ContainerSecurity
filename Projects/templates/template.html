@@ -44,6 +44,9 @@
         <option value="option1">Registry Scanning (Build)</option>
         <option value="option2">Registry Scanning (Run)</option>
         <option value="option3">Container Scanning (Build)</option>
+        <option value="option4">Container Scanning (Run)</option>
+        <option value="option5">Kubernetes PT (Build)</option>
+        <option value="option6">Kubernetes PT (Run)</option>
       </select>
       <br>
       <br>
@@ -250,28 +253,281 @@
           </tbody>
         </table>  
     </form> 
+  <form onsubmit="calculateTotal4(); return false;">
+    <table id="option4-table" style="display:none;">
+          <thead>
+            <tr>
+              <th colspan="2">Container Scanning (Run)</th>
+              <th colspan="4">Effort (Hours)</th>
+            </tr>
+            <tr>
+              <th>S No</th>
+              <th>Activities</th>
+              <th>Small (<=3 node)</th>
+              <th>Med (<=12 node)</th>
+              <th>Large (<=25 nodes)</th>
+              <th>X Large (<=50 nodes)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Configuring Scan and Analysis</td>
+              <td>
+                <input type="text" id="caEffortSmall">
+              </td>
+              <td>
+                <input type="text" id="caEffortMed">
+              </td>
+              <td>
+                <input type="text" id="caEffortLarge">
+              </td>
+              <td>
+                <input type="text" id="caEffortXLarge">
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Report Preparation and QA</td>
+              <td>
+                <input type="text" id="cdEffortSmall">
+              </td>
+              <td>
+                <input type="text" id="cdEffortMed">
+              </td>
+              <td>
+                <input type="text" id="cdEffortLarge">
+              </td>
+              <td>
+                <input type="text" id="cdEffortXLarge">
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Report Walkthrough</td>
+              <td>
+                <input type="text" id="rdEffortSmall">
+              </td>
+              <td>
+                <input type="text" id="rdEffortMed">
+              </td>
+              <td>
+                <input type="text" id="rdEffortLarge">
+              </td>
+              <td>
+                <input type="text" id="rdEffortXLarge">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">Total Run Effort (Container Scanning)</td>
+              <td id="totalEffortSmall4"></td>
+              <td id="totalEffortMed4"></td>
+              <td id="totalEffortLarge4"></td>
+              <td id="totalEffortXLarge4"></td>
+              <td colspan="4">
+                <input type="submit" value="Calculate Total">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </form>  
+    <form onsubmit="calculateTotal5(); return false;"> 
+      <table id="option5-table" style="display:none;">
+              <thead>
+                  <tr>
+                    <th colspan="2">Kubernetes PT (Build)</th>
+                    <th colspan="4">Effort (Hours)</th>
+                  </tr>
+                  <tr>
+                    <th>S No</th>
+                    <th>Activities</th>
+                    <th>Small (1 cluster)</th>
+                    <th>Med (Upto 3 clusters)</th>
+                    <th>Large (Upto 5 clusters)</th>
+                    <th>X Large (Upto 10 clusters)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Access Provisioning</td>
+                    <td>
+                      <input type="text" id="baEffortSmall">
+                    </td>
+                    <td>
+                      <input type="text" id="baEffortMed">
+                    </td>
+                    <td>
+                      <input type="text" id="baEffortLarge">
+                    </td>
+                    <td>
+                      <input type="text" id="baEffortXLarge">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Tool Deployment and Configuration</td>
+                    <td>
+                      <input type="text" id="bdEffortSmall">
+                    </td>
+                    <td>
+                      <input type="text" id="bdEffortMed">
+                    </td>
+                    <td>
+                      <input type="text" id="bdEffortLarge">
+                    </td>
+                    <td>
+                      <input type="text" id="bdEffortXLarge">
+                    </td>
+                  </tr>
+                    <td colspan="2">Total Build Effort (Kubernetes PT)</td>
+                    <td id="totalEffortSmall5"></td>
+                    <td id="totalEffortMed5"></td>
+                    <td id="totalEffortLarge5"></td>
+                    <td id="totalEffortXLarge5"></td>
+                    <td colspan="4">
+                  <input type="submit" value="Calculate Total"> 
+                    </td>
+                  </tr>
+                </tbody>
+              </table>  
+          </form> 
+          <form onsubmit="calculateTotal6(); return false;">
+            <table id="option6-table" style="display:none;">
+                  <thead>
+                    <tr>
+                      <th colspan="2">Kubernetes PT (Run)</th>
+                      <th colspan="4">Effort (Hours)</th>
+                    </tr>
+                    <tr>
+                      <th>S No</th>
+                      <th>Activities</th>
+                      <th>Small (1 cluster)</th>
+                      <th>Med (Upto 3 clusters)</th>
+                      <th>Large (Upto 5 clusters)</th>
+                      <th>X Large (Upto 10 clusters)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Assessment and Analysis</td>
+                      <td>
+                        <input type="text" id="daEffortSmall">
+                      </td>
+                      <td>
+                        <input type="text" id="daEffortMed">
+                      </td>
+                      <td>
+                        <input type="text" id="daEffortLarge">
+                      </td>
+                      <td>
+                        <input type="text" id="daEffortXLarge">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Report Preparation and QA</td>
+                      <td>
+                        <input type="text" id="drEffortSmall">
+                      </td>
+                      <td>
+                        <input type="text" id="drEffortMed">
+                      </td>
+                      <td>
+                        <input type="text" id="drEffortLarge">
+                      </td>
+                      <td>
+                        <input type="text" id="drEffortXLarge">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Report Walkthrough</td>
+                      <td>
+                        <input type="text" id="dwEffortSmall">
+                      </td>
+                      <td>
+                        <input type="text" id="dwEffortMed">
+                      </td>
+                      <td>
+                        <input type="text" id="dwEffortLarge">
+                      </td>
+                      <td>
+                        <input type="text" id="dwEffortXLarge">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">Total Run Effort (Kubernetes PT)</td>
+                      <td id="totalEffortSmall6"></td>
+                      <td id="totalEffortMed6"></td>
+                      <td id="totalEffortLarge6"></td>
+                      <td id="totalEffortXLarge6"></td>
+                      <td colspan="4">
+                        <input type="submit" value="Calculate Total">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </form>        
         <script>
             const select = document.getElementById('table-select');
             const option1Table = document.getElementById('option1-table');
             const option2Table = document.getElementById('option2-table');
             const option3Table = document.getElementById('option3-table');
+            const option4Table = document.getElementById('option4-table');
+            const option5Table = document.getElementById('option5-table');
+            const option6Table = document.getElementById('option6-table');
             select.addEventListener('change', () => {
               if (select.value === 'option1') {
                 option1Table.style.display = '';
                 option2Table.style.display = 'none';
                 option3Table.style.display = 'none';
+                option4Table.style.display = 'none';
+                option5Table.style.display = 'none';
+                option6Table.style.display = 'none';
               } else if (select.value === 'option2') {
                 option1Table.style.display = 'none';
                 option2Table.style.display = '';
                 option3Table.style.display = 'none';
+                option4Table.style.display = 'none';
+                option5Table.style.display = 'none';
+                option6Table.style.display = 'none';
               } else if (select.value === 'option3') {
                 option1Table.style.display = 'none';
                 option2Table.style.display = 'none';
                 option3Table.style.display = '';
+                option4Table.style.display = 'none';
+                option5Table.style.display = 'none';
+                option6Table.style.display = 'none';
+              } else if (select.value === 'option4') {
+                option1Table.style.display = 'none';
+                option2Table.style.display = 'none';
+                option3Table.style.display = 'none';
+                option4Table.style.display = '';
+                option5Table.style.display = 'none';
+                option6Table.style.display = 'none'; 
+              } else if (select.value === 'option5') {
+                option1Table.style.display = 'none';
+                option2Table.style.display = 'none';
+                option3Table.style.display = 'none';
+                option4Table.style.display = 'none';
+                option5Table.style.display = '';
+                option6Table.style.display = 'none'; 
+              } else if (select.value === 'option6') {
+                option1Table.style.display = 'none';
+                option2Table.style.display = 'none';
+                option3Table.style.display = 'none';
+                option4Table.style.display = 'none';
+                option5Table.style.display = 'none';
+                option6Table.style.display = '';
             } else if (select.value === 'none') {
                option1Table.style.display = 'none';
                option2Table.style.display = 'none';
-              option3Table.style.display = 'none';
+               option3Table.style.display = 'none';
+               option4Table.style.display = 'none';
+               option5Table.style.display = 'none';
+               option6Table.style.display = 'none';
             }
         });
 function calculateTotal1() {
@@ -384,6 +640,121 @@ function calculateTotal3() {
   totalCellMed.innerHTML = totalEffortMed3;
   totalCellLarge.innerHTML = totalEffortLarge3;
   totalCellXLarge.innerHTML = totalEffortXLarge3;
+}
+function calculateTotal4() {
+  // Get the values from the form inputs
+  var caEffortSmall = document.getElementById("caEffortSmall").value;
+  var caEffortMed = document.getElementById("caEffortMed").value;
+  var caEffortLarge = document.getElementById("caEffortLarge").value;
+  var caEffortXLarge = document.getElementById("caEffortXLarge").value;
+  var cdEffortSmall = document.getElementById("cdEffortSmall").value;
+  var cdEffortMed = document.getElementById("cdEffortMed").value;
+  var cdEffortLarge = document.getElementById("cdEffortLarge").value;
+  var cdEffortXLarge = document.getElementById("cdEffortXLarge").value;
+  var rdEffortSmall = document.getElementById("rdEffortSmall").value;
+  var rdEffortMed = document.getElementById("rdEffortMed").value;
+  var rdEffortLarge = document.getElementById("rdEffortLarge").value;
+  var rdEffortXLarge = document.getElementById("rdEffortXLarge").value;
+  
+// Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
+  var totalEffortSmall4 =
+parseFloat(caEffortSmall) + parseFloat(cdEffortSmall) + parseFloat(rdEffortSmall);
+// Calculate the sum of the "Effort (Hours) - Med (<30 repo)" column
+var totalEffortMed4 =
+parseFloat(caEffortMed) + parseFloat(cdEffortMed) + parseFloat(rdEffortMed);
+// Calculate the sum of the "Effort (Hours) - Large (<50 repo)" column
+var totalEffortLarge4 =
+parseFloat(caEffortLarge) + parseFloat(cdEffortLarge) + parseFloat(rdEffortLarge);
+// Calculate the sum of the "Effort (Hours) - X Large (<100 repo)" column
+var totalEffortXLarge4 =
+parseFloat(caEffortXLarge) + parseFloat(cdEffortXLarge) + parseFloat(rdEffortXLarge);
+// Get references to the "Total Build Effort (Registry Scanning)" cells
+var totalCellSmall = document.getElementById("totalEffortSmall4");
+var totalCellMed = document.getElementById("totalEffortMed4");
+var totalCellLarge = document.getElementById("totalEffortLarge4");
+var totalCellXLarge = document.getElementById("totalEffortXLarge4");
+
+// Update the "Total Build Effort (Registry Scanning)" cells with the calculated totals
+totalCellSmall.innerHTML = totalEffortSmall4;
+totalCellMed.innerHTML = totalEffortMed4;
+totalCellLarge.innerHTML = totalEffortLarge4;
+totalCellXLarge.innerHTML = totalEffortXLarge4;
+}
+
+function calculateTotal5() {
+  // Get the values from the form inputs
+  var baEffortSmall = document.getElementById("baEffortSmall").value;
+  var baEffortMed = document.getElementById("baEffortMed").value;
+  var baEffortLarge = document.getElementById("baEffortLarge").value;
+  var baEffortXLarge = document.getElementById("baEffortXLarge").value;
+  var bdEffortSmall = document.getElementById("bdEffortSmall").value;
+  var bdEffortMed = document.getElementById("bdEffortMed").value;
+  var bdEffortLarge = document.getElementById("bdEffortLarge").value;
+  var bdEffortXLarge = document.getElementById("bdEffortXLarge").value;
+  
+// Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
+  var totalEffortSmall5 =
+parseFloat(baEffortSmall) + parseFloat(bdEffortSmall);
+// Calculate the sum of the "Effort (Hours) - Med (<30 repo)" column
+var totalEffortMed5 =
+parseFloat(baEffortMed) + parseFloat(bdEffortMed);
+// Calculate the sum of the "Effort (Hours) - Large (<50 repo)" column
+var totalEffortLarge5 =
+parseFloat(baEffortLarge) + parseFloat(bdEffortLarge);
+// Calculate the sum of the "Effort (Hours) - X Large (<100 repo)" column
+var totalEffortXLarge5 =
+parseFloat(baEffortXLarge) + parseFloat(bdEffortXLarge);
+// Get references to the "Total Build Effort (Registry Scanning)" cells
+var totalCellSmall = document.getElementById("totalEffortSmall5");
+var totalCellMed = document.getElementById("totalEffortMed5");
+var totalCellLarge = document.getElementById("totalEffortLarge5");
+var totalCellXLarge = document.getElementById("totalEffortXLarge5");
+
+// Update the "Total Build Effort (Registry Scanning)" cells with the calculated totals
+totalCellSmall.innerHTML = totalEffortSmall5;
+totalCellMed.innerHTML = totalEffortMed5;
+totalCellLarge.innerHTML = totalEffortLarge5;
+totalCellXLarge.innerHTML = totalEffortXLarge5;
+}
+
+function calculateTotal6() {
+  // Get the values from the form inputs
+  var daEffortSmall = document.getElementById("daEffortSmall").value;
+  var daEffortMed = document.getElementById("daEffortMed").value;
+  var daEffortLarge = document.getElementById("daEffortLarge").value;
+  var daEffortXLarge = document.getElementById("daEffortXLarge").value;
+  var drEffortSmall = document.getElementById("drEffortSmall").value;
+  var drEffortMed = document.getElementById("drEffortMed").value;
+  var drEffortLarge = document.getElementById("drEffortLarge").value;
+  var drEffortXLarge = document.getElementById("drEffortXLarge").value;
+  var dwEffortSmall = document.getElementById("dwEffortSmall").value;
+  var dwEffortMed = document.getElementById("dwEffortMed").value;
+  var dwEffortLarge = document.getElementById("dwEffortLarge").value;
+  var dwEffortXLarge = document.getElementById("dwEffortXLarge").value;
+  
+// Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
+  var totalEffortSmall6 =
+parseFloat(daEffortSmall) + parseFloat(drEffortSmall) + parseFloat(dwEffortSmall);
+// Calculate the sum of the "Effort (Hours) - Med (<30 repo)" column
+var totalEffortMed6 =
+parseFloat(daEffortMed) + parseFloat(drEffortMed) + parseFloat(dwEffortMed);
+// Calculate the sum of the "Effort (Hours) - Large (<50 repo)" column
+var totalEffortLarge6 =
+parseFloat(daEffortLarge) + parseFloat(drEffortLarge) + parseFloat(dwEffortLarge);
+// Calculate the sum of the "Effort (Hours) - X Large (<100 repo)" column
+var totalEffortXLarge6 =
+parseFloat(daEffortXLarge) + parseFloat(drEffortXLarge) + parseFloat(dwEffortXLarge);
+// Get references to the "Total Build Effort (Registry Scanning)" cells
+var totalCellSmall = document.getElementById("totalEffortSmall6");
+var totalCellMed = document.getElementById("totalEffortMed6");
+var totalCellLarge = document.getElementById("totalEffortLarge6");
+var totalCellXLarge = document.getElementById("totalEffortXLarge6");
+
+// Update the "Total Build Effort (Registry Scanning)" cells with the calculated totals
+totalCellSmall.innerHTML = totalEffortSmall6;
+totalCellMed.innerHTML = totalEffortMed6;
+totalCellLarge.innerHTML = totalEffortLarge6;
+totalCellXLarge.innerHTML = totalEffortXLarge6;
 }
 </script>
 </body>
