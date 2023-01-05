@@ -12,4 +12,4 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8080)
 os.environ['FLASK_DEBUG'] = '1'    
 #%env FLASK_DEBUG=1
-python3 app.py
+#python3 app.py --> need to run to start application
