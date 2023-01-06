@@ -519,42 +519,49 @@
                option6Table.style.display = 'none';
             }
         });
-function calculateTotal1() {
-      // Get the values from the form inputs
-      var apEffortSmall = document.getElementById("apEffortSmall").value;
-      var apEffortMed = document.getElementById("apEffortMed").value;
-      var apEffortLarge = document.getElementById("apEffortLarge").value;
-      var apEffortXLarge = document.getElementById("apEffortXLarge").value;
-      var tdEffortSmall = document.getElementById("tdEffortSmall").value;
-      var tdEffortMed = document.getElementById("tdEffortMed").value;
-      var tdEffortLarge = document.getElementById("tdEffortLarge").value;
-      var tdEffortXLarge = document.getElementById("tdEffortXLarge").value;
+        function calculateTotal1() {
+          // Get the values from the form inputs
+          var apEffortSmall = document.getElementById("apEffortSmall").value;
+          var apEffortMed = document.getElementById("apEffortMed").value;
+          var apEffortLarge = document.getElementById("apEffortLarge").value;
+          var apEffortXLarge = document.getElementById("apEffortXLarge").value;
+          var tdEffortSmall = document.getElementById("tdEffortSmall").value;
+          var tdEffortMed = document.getElementById("tdEffortMed").value;
+          var tdEffortLarge = document.getElementById("tdEffortLarge").value;
+          var tdEffortXLarge = document.getElementById("tdEffortXLarge").value;
+        
+          // Set the input values to 0 if they are empty
+          apEffortSmall = apEffortSmall || 0;
+          apEffortMed = apEffortMed || 0;
+          apEffortLarge = apEffortLarge || 0;
+          apEffortXLarge = apEffortXLarge || 0;
+          tdEffortSmall = tdEffortSmall || 0;
+          tdEffortMed = tdEffortMed || 0;
+          tdEffortLarge = tdEffortLarge || 0;
+          tdEffortXLarge = tdEffortXLarge || 0;
+        
+          // Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
+          var totalEffortSmall1 = parseInt(apEffortSmall) + parseInt(tdEffortSmall);
+          // Calculate the sum of the "Effort (Hours) - Med (<30 repo)" column
+          var totalEffortMed1 = parseInt(apEffortMed) + parseInt(tdEffortMed);
+          // Calculate the sum of the "Effort (Hours) - Large (<50 repo)" column
+          var totalEffortLarge1 = parseInt(apEffortLarge) + parseInt(tdEffortLarge);
+          // Calculate the sum of the "Effort (Hours) - X Large (<100 repo)" column
+          var totalEffortXLarge1 = parseInt(apEffortXLarge) + parseInt(tdEffortXLarge);
+          // Get references to the "Total Build Effort (Registry Scanning)" cells
+          var totalCellSmall = document.getElementById("totalEffortSmall1");
+          var totalCellMed = document.getElementById("totalEffortMed1");
+          var totalCellLarge = document.getElementById("totalEffortLarge1");
+          var totalCellXLarge = document.getElementById("totalEffortXLarge1");
+        
+          // Update the "Total Build Effort (Registry Scanning)" cells with the calculated totals
+          totalCellSmall.innerHTML = totalEffortSmall1;
+          totalCellMed.innerHTML = totalEffortMed1;
+          totalCellLarge.innerHTML = totalEffortLarge1;
+          totalCellXLarge.innerHTML = totalEffortXLarge1;
+        
+}  
       
-// Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
-      var totalEffortSmall1 =
-    parseFloat(apEffortSmall) + parseFloat(tdEffortSmall);
-// Calculate the sum of the "Effort (Hours) - Med (<30 repo)" column
-    var totalEffortMed1 =
-    parseFloat(apEffortMed) + parseFloat(tdEffortMed);
-// Calculate the sum of the "Effort (Hours) - Large (<50 repo)" column
-    var totalEffortLarge1 =
-    parseFloat(apEffortLarge) + parseFloat(tdEffortLarge);
-// Calculate the sum of the "Effort (Hours) - X Large (<100 repo)" column
-    var totalEffortXLarge1 =
-    parseFloat(apEffortXLarge) + parseFloat(tdEffortXLarge);
-// Get references to the "Total Build Effort (Registry Scanning)" cells
-  var totalCellSmall = document.getElementById("totalEffortSmall1");
-  var totalCellMed = document.getElementById("totalEffortMed1");
-  var totalCellLarge = document.getElementById("totalEffortLarge1");
-  var totalCellXLarge = document.getElementById("totalEffortXLarge1");
-
-  // Update the "Total Build Effort (Registry Scanning)" cells with the calculated totals
-  totalCellSmall.innerHTML = totalEffortSmall1;
-  totalCellMed.innerHTML = totalEffortMed1;
-  totalCellLarge.innerHTML = totalEffortLarge1;
-  totalCellXLarge.innerHTML = totalEffortXLarge1;
-}
-
 function calculateTotal2() {
       // Get the values from the form inputs
       var csEffortSmall = document.getElementById("csEffortSmall").value;
@@ -570,6 +577,21 @@ function calculateTotal2() {
       var rwEffortLarge = document.getElementById("rwEffortLarge").value;
       var rwEffortXLarge = document.getElementById("rwEffortXLarge").value;
       
+   // Set the input values to 0 if they are empty
+   csEffortSmall = csEffortSmall || 0;
+   csEffortMed = csEffortMed || 0;
+   csEffortLarge = csEffortLarge || 0;
+   csEffortXLarge = csEffortXLarge || 0;
+   rpEffortSmall = rpEffortSmall || 0;
+   rpEffortMed = rpEffortMed || 0;
+   rpEffortLarge = rpEffortLarge || 0;
+   rpEffortXLarge = rpEffortXLarge || 0; 
+   rwEffortSmall = rwEffortSmall || 0;
+   rwEffortMed = rwEffortMed || 0;
+   rwEffortLarge = rwEffortLarge || 0;
+   rwEffortXLarge = rwEffortXLarge || 0; 
+
+
 // Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
       var totalEffortSmall2 =
     parseFloat(csEffortSmall) + parseFloat(rpEffortSmall) + parseFloat(rwEffortSmall);
@@ -605,6 +627,15 @@ function calculateTotal3() {
       var ctEffortMed = document.getElementById("ctEffortMed").value;
       var ctEffortLarge = document.getElementById("ctEffortLarge").value;
       var ctEffortXLarge = document.getElementById("ctEffortXLarge").value;
+  // Set the input values to 0 if they are empty
+  cbEffortSmall = cbEffortSmall || 0;
+  cbEffortMed = cbEffortMed || 0;
+  cbEffortLarge = cbEffortLarge || 0;
+  cbEffortXLarge = cbEffortXLarge || 0;
+  ctEffortSmall = ctEffortSmall || 0;
+  ctEffortMed = ctEffortMed || 0;
+  ctEffortLarge = ctEffortLarge || 0;
+  ctEffortXLarge = ctEffortXLarge || 0;    
       
 // Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
       var totalEffortSmall3 =
@@ -644,6 +675,20 @@ function calculateTotal4() {
   var rdEffortMed = document.getElementById("rdEffortMed").value;
   var rdEffortLarge = document.getElementById("rdEffortLarge").value;
   var rdEffortXLarge = document.getElementById("rdEffortXLarge").value;
+
+// Set the input values to 0 if they are empty
+caEffortSmall = caEffortSmall || 0;
+caEffortMed = caEffortMed || 0;
+caEffortLarge = caEffortLarge || 0;
+caEffortXLarge = caEffortXLarge || 0;
+cdEffortSmall = cdEffortSmall || 0;
+cdEffortMed = cdEffortMed || 0;
+cdEffortLarge = cdEffortLarge || 0;
+cdEffortXLarge = cdEffortXLarge || 0; 
+rdEffortSmall = rdEffortSmall || 0;
+rdEffortMed = rdEffortMed || 0;
+rdEffortLarge = rdEffortLarge || 0;
+rdEffortXLarge = rdEffortXLarge || 0; 
   
 // Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
   var totalEffortSmall4 =
@@ -680,6 +725,15 @@ function calculateTotal5() {
   var bdEffortMed = document.getElementById("bdEffortMed").value;
   var bdEffortLarge = document.getElementById("bdEffortLarge").value;
   var bdEffortXLarge = document.getElementById("bdEffortXLarge").value;
+  // Set the input values to 0 if they are empty
+  baEffortSmall = baEffortSmall || 0;
+  baEffortMed = baEffortMed || 0;
+  baEffortLarge = baEffortLarge || 0;
+  baEffortXLarge = baEffortXLarge || 0;
+  bdEffortSmall = bdEffortSmall || 0;
+  bdEffortMed = bdEffortMed || 0;
+  bdEffortLarge = bdEffortLarge || 0;
+  bdEffortXLarge = bdEffortXLarge || 0; 
   
 // Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
   var totalEffortSmall5 =
@@ -720,6 +774,19 @@ function calculateTotal6() {
   var dwEffortMed = document.getElementById("dwEffortMed").value;
   var dwEffortLarge = document.getElementById("dwEffortLarge").value;
   var dwEffortXLarge = document.getElementById("dwEffortXLarge").value;
+  // Set the input values to 0 if they are empty
+daEffortSmall = daEffortSmall || 0;
+daEffortMed = daEffortMed || 0;
+daEffortLarge = daEffortLarge || 0;
+daEffortXLarge = daEffortXLarge || 0;
+drEffortSmall = drEffortSmall || 0;
+drEffortMed = drEffortMed || 0;
+drEffortLarge = drEffortLarge || 0;
+drEffortXLarge = drEffortXLarge || 0; 
+dwEffortSmall = dwEffortSmall || 0;
+dwEffortMed = dwEffortMed || 0;
+dwEffortLarge = dwEffortLarge || 0;
+dwEffortXLarge = dwEffortXLarge || 0; 
   
 // Calculate the sum of the "Effort (Hours) - Small (<10 repo)" column
   var totalEffortSmall6 =
