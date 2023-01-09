@@ -105,6 +105,7 @@
               <td id="totalEffortXLarge1"></td>
             </tr> 
             <td colspan="4">
+              <input type="reset" value="Reset" onclick="resetForm();">
               <input type="submit" value="Calculate Total">
                </td>
               </tbody>
@@ -180,6 +181,7 @@
               </tr>
               <tr>
                 <td colspan="4">
+                  <input type="reset" value="Reset" onclick="resetForm();">
                   <input type="submit" value="Calculate Total">
                 </td>
               </tr>
@@ -241,6 +243,7 @@
                 <td id="totalEffortXLarge3"></td>
               </tr> 
               <td colspan="4">
+                <input type="reset" value="Reset" onclick="resetForm();">
                 <input type="submit" value="Calculate Total">
                  </td>
                 </tbody>
@@ -316,6 +319,7 @@
                 </tr>
                 <tr>
                   <td colspan="4">
+                    <input type="reset" value="Reset" onclick="resetForm();">
                     <input type="submit" value="Calculate Total">
                   </td>
                 </tr>
@@ -377,6 +381,7 @@
                   <td id="totalEffortXLarge5"></td>
                 </tr> 
                 <td colspan="4">
+                  <input type="reset" value="Reset" onclick="resetForm();">
                   <input type="submit" value="Calculate Total">
                    </td>
                   </tbody>
@@ -452,6 +457,7 @@
                   </tr>
                   <tr>
                     <td colspan="4">
+                      <input type="reset" value="Reset" onclick="resetForm();">
                       <input type="submit" value="Calculate Total">
                     </td>
                   </tr>
@@ -519,6 +525,35 @@
                option6Table.style.display = 'none';
             }
         });
+
+        function resetForm() {
+          document.getElementById('totalEffortSmall1').textContent = '';
+          document.getElementById('totalEffortMed1').textContent = '';
+          document.getElementById('totalEffortLarge1').textContent = '';
+          document.getElementById('totalEffortXLarge1').textContent = '';
+          document.getElementById('totalEffortSmall2').textContent = '';
+          document.getElementById('totalEffortMed2').textContent = '';
+          document.getElementById('totalEffortLarge2').textContent = '';
+          document.getElementById('totalEffortXLarge2').textContent = '';
+          document.getElementById('totalEffortSmall3').textContent = '';
+          document.getElementById('totalEffortMed3').textContent = '';
+          document.getElementById('totalEffortLarge3').textContent = '';
+          document.getElementById('totalEffortXLarge3').textContent = '';
+          document.getElementById('totalEffortSmall4').textContent = '';
+          document.getElementById('totalEffortMed4').textContent = '';
+          document.getElementById('totalEffortLarge4').textContent = '';
+          document.getElementById('totalEffortXLarge4').textContent = '';
+          document.getElementById('totalEffortSmall5').textContent = '';
+          document.getElementById('totalEffortMed5').textContent = '';
+          document.getElementById('totalEffortLarge5').textContent = '';
+          document.getElementById('totalEffortXLarge5').textContent = '';
+          document.getElementById('totalEffortSmall6').textContent = '';
+          document.getElementById('totalEffortMed6').textContent = '';
+          document.getElementById('totalEffortLarge6').textContent = '';
+          document.getElementById('totalEffortXLarge6').textContent = '';
+
+        }
+
         function calculateTotal1() {
           // Get the values from the form inputs
           var apEffortSmall = document.getElementById("apEffortSmall").value;
